@@ -1,12 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Spinner from './Spinner';
 
 export default function AppNav() {
   return (
     <div>
-      <Spinner />
-
       <ul>
         <li>
           <Link href="/" to="/">Home</Link>
@@ -18,7 +15,6 @@ export default function AppNav() {
           <Link href="/topics" to="/topics">Topics</Link>
         </li>
       </ul>
-
       <hr />
     </div>
   );

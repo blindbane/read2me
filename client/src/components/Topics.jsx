@@ -3,7 +3,7 @@ import { Route, Link } from 'react-router-dom';
 
 import Topic from './Topic';
 
-function Topics({ match }) {
+export default function Topics({ match }) {
   return (
     <div>
       <h2>Topics</h2>
@@ -28,6 +28,3 @@ function Topics({ match }) {
     </div>
   );
 }
-
-
-export default Topics;
