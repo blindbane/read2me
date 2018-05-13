@@ -11,7 +11,6 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import NavItems from '../molecules/NavItems';
 
 const drawerWidth = 240;
@@ -45,9 +44,6 @@ const styles = theme => ({
   'appBarShift-left': {
     marginLeft: drawerWidth,
   },
-  'appBarShift-right': {
-    marginRight: drawerWidth,
-  },
   menuButton: {
     marginLeft: 12,
     marginRight: 20,
@@ -78,9 +74,6 @@ const styles = theme => ({
   'content-left': {
     marginLeft: -drawerWidth,
   },
-  'content-right': {
-    marginRight: -drawerWidth,
-  },
   contentShift: {
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
@@ -90,15 +83,11 @@ const styles = theme => ({
   'contentShift-left': {
     marginLeft: 0,
   },
-  'contentShift-right': {
-    marginRight: 0,
-  },
 });
 
 class PersistentDrawer extends React.Component {
   state = {
     open: false,
-    anchor: 'left',
   };
 
   handleDrawerOpen = () => {
@@ -110,13 +99,13 @@ class PersistentDrawer extends React.Component {
   };
 
   render() {
-    const { classes, theme } = this.props;
-    const { anchor, open } = this.state;
+    const { classes } = this.props;
+    const { open } = this.state;
 
     const drawer = (
       <Drawer
         variant="persistent"
-        anchor={anchor}
+        anchor="left"
         open={open}
         classes={{
           paper: classes.drawerPaper,
@@ -124,7 +113,7 @@ class PersistentDrawer extends React.Component {
       >
         <div className={classes.drawerHeader}>
           <IconButton onClick={this.handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+            <ChevronLeftIcon />
           </IconButton>
         </div>
         <Divider />
@@ -132,14 +121,9 @@ class PersistentDrawer extends React.Component {
       </Drawer>
     );
 
-    let before = null;
-    let after = null;
+    const before = drawer;
+    const after = null;
 
-    if (anchor === 'left') {
-      before = drawer;
-    } else {
-      after = drawer;
-    }
 
     return (
       <div className={classes.root}>
@@ -147,7 +131,7 @@ class PersistentDrawer extends React.Component {
           <AppBar
             className={classNames(classes.appBar, {
               [classes.appBarShift]: open,
-              [classes[`appBarShift-${anchor}`]]: open,
+              [classes['appBarShift-left']]: open,
             })}
           >
             <Toolbar disableGutters={!open}>
@@ -166,13 +150,13 @@ class PersistentDrawer extends React.Component {
           </AppBar>
           {before}
           <main
-            className={classNames(classes.content, classes[`content-${anchor}`], {
+            className={classNames(classes.content, classes['content-left'], {
               [classes.contentShift]: open,
-              [classes[`contentShift-${anchor}`]]: open,
+              [classes['contentShift-left']]: open,
             })}
           >
             <div className={classes.drawerHeader} />
-            <Typography>You think water moves fast? You should see ice.</Typography>
+            {this.props.children}
           </main>
           {after}
         </div>
@@ -184,6 +168,7 @@ class PersistentDrawer extends React.Component {
 PersistentDrawer.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default withStyles(styles, { withTheme: true })(PersistentDrawer);
