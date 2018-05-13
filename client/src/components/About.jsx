@@ -1,9 +1,8 @@
 import React from 'react';
+import TextLayout from './layout/TextLayout';
 
 export default function About() {
   return (
-    <div>
-      <h2>About</h2>
-    </div>
+    <TextLayout />
   );
 }

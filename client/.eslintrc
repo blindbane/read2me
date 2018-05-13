@@ -4,5 +4,9 @@
     "browser": true,
     "node": true,
     "jest": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "react/forbid-prop-types": 0
   }
 }
