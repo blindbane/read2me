@@ -6,7 +6,7 @@ import About from './components/About';
 import Home from './components/Home';
 import Topics from './components/Topics';
 
-function BasicExample() {
+export default function App() {
   return (
     <Router>
       <div>
@@ -19,4 +19,3 @@ function BasicExample() {
   );
 }
 
-export default BasicExample;
