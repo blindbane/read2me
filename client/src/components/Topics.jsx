@@ -9,13 +9,13 @@ function Topics({ match }) {
       <h2>Topics</h2>
       <ul>
         <li>
-          <Link to={`${match.url}/rendering`}>Rendering with React</Link>
+          <Link href={`${match.url}/rendering`} to={`${match.url}/rendering`}>Rendering with React</Link>
         </li>
         <li>
-          <Link to={`${match.url}/components`}>Components</Link>
+          <Link href={`${match.url}/components`} to={`${match.url}/components`}>Components</Link>
         </li>
         <li>
-          <Link to={`${match.url}/props-v-state`}>Props v. State</Link>
+          <Link href={`${match.url}/props-v-state`} to={`${match.url}/props-v-state`}>Props v. State</Link>
         </li>
       </ul>
 
