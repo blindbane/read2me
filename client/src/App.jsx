@@ -4,8 +4,9 @@ import SideBar from './components/layout/SideBar';
 import About from './components/pages/About';
 import Home from './components/pages/Home';
 import Topics from './components/pages/Topics';
+import withRoot from './withRoot';
 
-export default function App() {
+function App() {
   return (
     <Router>
       <SideBar>
@@ -17,3 +18,4 @@ export default function App() {
   );
 }
 
+export default withRoot(App);
