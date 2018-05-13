@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import AppNav from './components/AppNav';
 import About from './components/About';
@@ -11,7 +11,6 @@ function BasicExample() {
     <Router>
       <div>
         <AppNav />
-
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/topics" component={Topics} />
