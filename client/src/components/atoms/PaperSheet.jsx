@@ -13,12 +13,17 @@ const styles = theme => ({
 });
 
 function PaperSheet(props) {
-  const { classes, title, body } = props;
+  const {
+    classes, title, body, username,
+  } = props;
   return (
     <div>
       <Paper className={classes.root} elevation={4}>
         <Typography variant="headline" component="h3">
           {title}
+        </Typography>
+        <Typography variant="subheading" component="h4">
+          By: {username}
         </Typography>
         <Typography component="p">
           {body}
@@ -30,6 +35,9 @@ function PaperSheet(props) {
 
 PaperSheet.propTypes = {
   classes: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles)(PaperSheet);

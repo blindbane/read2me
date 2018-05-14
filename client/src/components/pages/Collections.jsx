@@ -6,7 +6,6 @@ import Spinner from '../atoms/Spinner';
 export default class Collections extends Component {
   state = {
     texts: [],
-    currentText: '',
   }
   componentDidMount() {
     axios.get('/text').then((res) => {
@@ -22,7 +21,7 @@ export default class Collections extends Component {
     return (
       <div>
         <h2>Collections</h2>
-        {this.state.texts.map(text => <PaperSheet key={text.id} title={text.title} body={text.text} />)}
+        {this.state.texts.map(text => <PaperSheet key={text.id} title={text.title} username={text.username} body={text.text} />)}
       </div>
     );
   }
