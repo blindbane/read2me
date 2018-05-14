@@ -5,7 +5,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import StarIcon from '@material-ui/icons/Star';
 import SendIcon from '@material-ui/icons/Send';
-
 import { Link } from 'react-router-dom';
 
 const NavItems = (
@@ -27,6 +26,12 @@ const NavItems = (
         <SendIcon />
       </ListItemIcon>
       <ListItemText primary="Topics" />
+    </ListItem>
+    <ListItem button component={Link} to="/collections">
+      <ListItemIcon>
+        <SendIcon />
+      </ListItemIcon>
+      <ListItemText primary="Collections" />
     </ListItem>
   </div>
 );
