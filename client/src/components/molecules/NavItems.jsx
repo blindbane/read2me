@@ -21,12 +21,6 @@ const NavItems = (
       </ListItemIcon>
       <ListItemText primary="About" />
     </ListItem>
-    <ListItem button component={Link} to="/topics">
-      <ListItemIcon>
-        <SendIcon />
-      </ListItemIcon>
-      <ListItemText primary="Topics" />
-    </ListItem>
     <ListItem button component={Link} to="/collections">
       <ListItemIcon>
         <SendIcon />
