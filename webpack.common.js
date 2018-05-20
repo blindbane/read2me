@@ -7,25 +7,14 @@ module.exports = {
   entry: {
     app: './src/index.js'
   },
-  mode: 'development', 
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: path.join(__dirname, "public"),
-    hot: true
-  },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       title: "read2me",
       filename: "index.html",
-      template: path.join(__dirname, "public/index.html")
+      template: './index.html'
     }),
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
   ],
-  resolve: {
-    extensions: [".jsx", ".js", ".json"]
-  },
   module: {
     rules: [
       {
@@ -51,7 +40,7 @@ module.exports = {
     ]
   },
   output: {
-    filename: "[name].bundle.js",
+    filename: "[name].[hash].js",
     path: path.resolve(__dirname, "dist")
   }
 };
