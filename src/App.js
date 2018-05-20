@@ -1,10 +1,10 @@
-import React from 'react';
-import { hot } from 'react-hot-loader';
-import './App.css';
-import catGif from './catGif.gif';
-import catPng from './catPng.png';
-import catSvg from './catSvg.svg';
-import catJpg from './catJpg.jpg';
+import React from "react";
+import { hot } from "react-hot-loader";
+import "./App.css";
+import catGif from "./catGif.gif";
+import catPng from "./catPng.png";
+import catSvg from "./catSvg.svg";
+import catJpg from "./catJpg.jpg";
 
 function App() {
   return (
