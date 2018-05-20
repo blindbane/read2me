@@ -1,4 +1,5 @@
 import React from 'react';
+import { hot } from 'react-hot-loader'
 import './App.css';
 import catGif from './catGif.gif';
 import catPng from './catPng.png';
@@ -17,4 +18,4 @@ function App(props) {
   );
 }
 
-export default App;
+export default hot(module)(App);
